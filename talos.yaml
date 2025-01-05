@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install Talosctl
+      shell: |
+        curl -Lo /usr/local/bin/talosctl https://github.com/siderolabs/talos/releases/download/v1.9.0/talosctl-linux-amd64
+        chmod +x /usr/local/bin/talosctl
+    - name: Generate Talos config
+      shell: |
+        talosctl gen config talos https://192.168.44.159:6443 --output-dir /home/vagrant/talos-configs --force
+    - name: Apply Talos config
+      shell: |
+        talosctl apply-config --insecure --nodes 192.168.44.159 --file /home/vagrant/talos-configs/controlplane.yaml
