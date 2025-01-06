@@ -1,14 +1,14 @@
 provider "proxmox" {
   pm_api_url = "https://192.168.76.20:8006/api2/json"
   pm_user    = "root@pam"
-  pm_password = "Appelsap5783"
+  pm_password = "XXXXX"
   pm_tls_insecure = true
 }
 
 resource "proxmox_vm_qemu" "cloudinit-talos-node" {
     target_node = "proxmox-dell"
     desc = "Cloudinit Ubuntu"
-    count = 1  # Aangepast voor een enkele node
+    count = 1  
     onboot = true
     clone = "23.04-non-KVM"
     agent = 0
