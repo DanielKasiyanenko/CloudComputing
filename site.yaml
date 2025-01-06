@@ -1,9 +1,7 @@
-# Hello, thanks for using my playbook, hopefully you can help to improve it.
-
 # Install TalosCTL on Ansible node
 - name: Install TalosCTL
   hosts: ansible
-  gather_facts: true # enables us to gather lots of useful variables: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html
+  gather_facts: true
   become: true
   roles:
     - install-talosctl
