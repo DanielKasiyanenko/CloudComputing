@@ -35,9 +35,9 @@ resource "proxmox_vm_qemu" "cloudinit-talos-node" {
         }
     }
 
-    ipconfig0 = "ip=192.168.3.101/24,gw=192.168.3.1"
+    ipconfig0 = "ip=192.168.76.101/24,gw=192.168.76.1"
     ciuser = "ubuntu"
-    nameserver = "192.168.200.11"
+    nameserver = "192.168.76.21"
     sshkeys = <<EOF
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKfn+iQH2HnuXIa67zBzEUfrg4mfH9meVy/CWuzODj2G8K6xWXUx9YTzchqr2xjXxLDQcDC+RDwVY0cAiWZ/OrXd6H8QEkSSEuAc/exWvVmLQGr3e41Ff9BUslqayGEPwFP6fndCWK8FthiwYUUGM5sODLZl4DFcqtgICRzuEcNcRQZFpq/h5NzCYmdPWMrAuQLfF/fW2VRD5gnqaDkgW+pdw+1umut5ey6C4fCPA9/7vkSesDc2RafA3gRkBmO1IxBVhzgl7OLl84iFnl1dEUcrdSCoaRL2AHC36EDvhF5M/Zlv5hebITzc9f7cF88k/rsx2ZnlSOeIHD31/lRhWL root@proxmox-dell
 EOF
