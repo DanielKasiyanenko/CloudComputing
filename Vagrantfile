@@ -7,9 +7,8 @@ Vagrant.configure("2") do |config|
     # Sync playbook, inventory, and roles directory to VM
     config.vm.synced_folder ".", "/home/vagrant", create: true
     config.vm.provision "file", source: "./site.yaml", destination: "/home/vagrant/site.yaml"
-    config.vm.provision "file", source: "./talos.yaml", destination: "/home/vagrant/talos.yaml"
-    config.vm.provision "file", source: "./inventory/hosts.ini", destination: "/home/vagrant/hosts.ini"
-
+    config.vm.provision "file", source: "./roles", destination: "/home/vagrant/roles/*"
+    config.vm.provision "file", source: "./inventory", destination: "/home/vagrant/inventory/*"
 
     # SSH key provisioning
     node.vm.provision "shell", inline: <<-SHELL
@@ -52,5 +51,4 @@ Vagrant.configure("2") do |config|
     v.gui = true
     config.vm.boot_timeout = 600  
   end
-
 end
