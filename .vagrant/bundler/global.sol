@@ -1,0 +1,1 @@
+{"dependencies":[["vagrant-guest_ansible",["= 0.0.4"]],["vagrant-host-shell",["= 0.0.4"]],["net-ssh",[">= 2.6.5","< 8.0.0"]],["net-scp",[">= 1.1"]],["log4r",["~> 1.1"]],["vagrant-scp",["= 0.5.9"]],["vagrant-vmware-desktop",["= 3.0.4"]]],"checksum":"9d6f5e2663746fa9887d24ae1d91cbf46fb83e133ce8003f06938617815ed8d3","vagrant_version":"2.4.3"}

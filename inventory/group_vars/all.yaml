@@ -16,7 +16,7 @@ vip_interface: eth0
 vip: 192.168.5.50
 
 # metallb_version: v0.13.12
-# lb_range: 192.168.200.80-192.168.200.90
+# lb_range: 192.168.76.80-192.168.76.90
 # lb_pool_name: first-pool
 
 ansible_user: ubuntu

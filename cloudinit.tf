@@ -6,7 +6,7 @@ provider "proxmox" {
 }
 
 resource "proxmox_vm_qemu" "cloudinit-talos-node" {
-    target_node = "proxmox-dell"
+    target_node = "proxmox"
     desc = "Cloudinit Ubuntu"
     count = 1  
     onboot = true

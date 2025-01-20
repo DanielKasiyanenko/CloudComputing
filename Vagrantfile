@@ -2,13 +2,13 @@ Vagrant.configure("2") do |config|
   config.vm.define "talos-node" do |node|
     node.vm.box = "alvistack/ubuntu-22.04"
     node.vm.box_version = "20250103.1.1"
-    node.vm.network "private_network", type: "dhcp"
+    node.vm.network "private_network", ip: "192.168.76.20"
 
     # Sync playbook, inventory, and roles directory to VM
     config.vm.synced_folder ".", "/home/vagrant", create: true
-    config.vm.provision "file", source: "./site.yaml", destination: "/home/vagrant/site.yaml"
-    config.vm.provision "file", source: "./roles", destination: "/home/vagrant/roles/*"
-    config.vm.provision "file", source: "./inventory", destination: "/home/vagrant/inventory/*"
+    config.vm.provision "file", source: "./playbook.yaml", destination: "/home/vagrant/playbook.yaml"
+    config.vm.provision "file", source: "D:/Talos/roles", destination: "/home/vagrant/roles/*"
+    config.vm.provision "file", source: "D:/Talos/inventory", destination: "/home/vagrant/inventory/*"
 
     # SSH key provisioning
     node.vm.provision "shell", inline: <<-SHELL
@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
     v.memory = 4096
     v.cpus = 2
     v.linked_clone = true
-    v.gui = true
-    config.vm.boot_timeout = 600  
+    v.gui = false
+    config.vm.boot_timeout = 600
   end
 end
