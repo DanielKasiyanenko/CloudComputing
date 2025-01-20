@@ -1,0 +1,7 @@
+Testfile2
+Testfile2 update
+<<<<<<< HEAD
+Miauw
+=======
+Test lijn 3
+>>>>>>> 8ba8be7d2b620532b715df9e29360f3c1cc05e4b
